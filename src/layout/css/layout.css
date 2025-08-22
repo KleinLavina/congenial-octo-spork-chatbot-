@@ -1,0 +1,42 @@
+/* App Layout */
+html, body {
+  overflow: hidden;           /* Prevent page-level scrolling */
+  height: 100%; 
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  display: flex;
+  justify-content: space-between;
+  width: 98vw;
+  height: 100vh;
+  margin: auto;
+  overflow: hidden;           /* Prevent internal scrolling */
+  position: fixed;            /* Lock it in place */
+  top: 0;
+  left: 1vw;                  /* Center it (98vw + 1vw margin each side) */
+}
+
+/* Sidebars */
+.sidebar {
+  padding: 20px;
+  color: rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  height: 100vh;              /* Match parent height exactly */
+  overflow-y: auto;           /* Allow sidebar content to scroll if needed */
+}
+
+/* Chat Area (Center) */
+.chat {
+  width: 70%;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  height: 100vh;              /* Match parent height */
+  overflow: hidden;           /* Prevent dragging */
+}
