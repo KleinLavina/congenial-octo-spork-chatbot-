@@ -1,42 +1,99 @@
 /* App Layout */
 html, body {
-  overflow: hidden;           /* Prevent page-level scrolling */
-  height: 100%; 
   margin: 0;
   padding: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
 }
 
 .app {
   display: flex;
-  justify-content: space-between;
-  width: 98vw;
+  width: 100vw;
   height: 100vh;
-  margin: auto;
-  overflow: hidden;           /* Prevent internal scrolling */
-  position: fixed;            /* Lock it in place */
+  position: fixed;
   top: 0;
-  left: 1vw;                  /* Center it (98vw + 1vw margin each side) */
+  left: 0;
+  overflow: hidden;
 }
 
-/* Sidebars */
+/* Sidebar */
 .sidebar {
+  width: 25%; /* normal width */
+  min-width: 50px; /* never smaller than 50px */
+  height: 100%;
   padding: 20px;
-  color: rgb(0, 0, 0);
+  background-color: #f0f0f0;
+  color: #000;
   display: flex;
   flex-direction: column;
   gap: 15px;
-  height: 100vh;              /* Match parent height exactly */
-  overflow-y: auto;           /* Allow sidebar content to scroll if needed */
+  overflow-y: auto;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  transition: width 0.3s ease; /* smooth resize */
 }
 
-/* Chat Area (Center) */
+/* Chat Area */
 .chat {
-  width: 70%;
-  background: #ffffff;
+  flex: 1;
+  height: 100%;
+  background-color: #ffffff;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
   padding: 20px;
-  height: 100vh;              /* Match parent height */
-  overflow: hidden;           /* Prevent dragging */
+  transition: width 0.3s ease; /* responsive adjustment */
+}
+
+.menu-icon {
+  display: none; /* default hidden */
+}
+/* Collapse sidebar on medium screens */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 50px;
+    padding-top: 10px;
+  }
+
+  .chat {
+    width: calc(100% - 50px);
+  }
+}
+
+/* Hide sidebar and show menu icon on small screens */
+@media (max-width: 786px) {
+  .sidebar {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1000;
+  }
+
+  .chat {
+    width: 100%;
+  }
+}
+
+/* Hide sidebar and menu icon on extra small screens */
+@media (max-width: 500px) {
+   .menu-icon {
+    display: block;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1000;
+  }
+  .chat {
+    width: 100%;
+  }
 }
