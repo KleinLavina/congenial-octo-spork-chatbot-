@@ -49,8 +49,8 @@ html, body {
 .menu-icon {
   display: none; /* default hidden */
 }
-/* Collapse sidebar on medium screens */
-@media (max-width: 1024px) {
+/* Shrink sidebar between 1024px and 787px */
+@media (max-width: 1024px) and (min-width: 601px) {
   .sidebar {
     width: 50px;
     padding-top: 10px;
@@ -61,8 +61,8 @@ html, body {
   }
 }
 
-/* Hide sidebar and show menu icon on small screens */
-@media (max-width: 786px) {
+/* Hide sidebar and show menu icon between 786px and 501px */
+@media (max-width: 600px) and (min-width: 501px) {
   .sidebar {
     display: none;
   }
@@ -82,9 +82,13 @@ html, body {
   }
 }
 
-/* Hide sidebar and menu icon on extra small screens */
+/* Extra small screens: only menu icon */
 @media (max-width: 500px) {
-   .menu-icon {
+  .sidebar {
+    display: none;
+  }
+
+  .menu-icon {
     display: block;
     position: fixed;
     top: 10px;
@@ -93,6 +97,7 @@ html, body {
     cursor: pointer;
     z-index: 1000;
   }
+
   .chat {
     width: 100%;
   }

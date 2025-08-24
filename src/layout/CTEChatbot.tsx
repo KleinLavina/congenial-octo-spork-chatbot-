@@ -10,7 +10,7 @@ const CTEChatbot: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
-      text: "Hello! I'm the CTE Department assistant. How can I help you today?",
+      text: "Hey there! 👋 I'm your CTE Buddy from SJC Maasin!\n\nThink of me as your college bestie who actually knows where all the offices are! 😄\n\nWhat can I help you with today?",
       isBot: true,
       timestamp: new Date(),
     },

@@ -18,15 +18,15 @@ const SidebarLeft: React.FC = () => {
     const handleResize = () => {
       const width = window.innerWidth;
 
-      if (width <= 786) {
-        // Small screens: sidebar hidden, menu icon visible
+      if (width <= 500) {
+        // Extra small screens: sidebar hidden, menu icon visible
         setIsVisible(false);
         setCanToggle(true); // menu icon always shows
         setIsExpanded(false);
-      } else if (width <= 800) {
-        // Medium screens: collapsed sidebar, no menu icon
-        setIsVisible(true);
-        setCanToggle(false);
+      } else if (width <= 600) {
+        // Small screens: sidebar hidden, menu icon visible
+        setIsVisible(false);
+        setCanToggle(true);
         setIsExpanded(false);
       } else if (width <= 1024) {
         // Medium screens: collapsed sidebar, no menu icon
@@ -65,41 +65,63 @@ const SidebarLeft: React.FC = () => {
           <div className="sidebar-container">
             {/* Toggle Button */}
             <button
-              className="toggle-sidebar"
+              className="toggle-btn"
               onClick={() => setIsExpanded(!isExpanded)}
             >
-              {isExpanded ? "«" : "»"}
+              {isExpanded ? "«  " : "»"}
             </button>
 
             {/* Top Section */}
             <div className="sidebar-top">
               <h2 className="logo">{isExpanded ? "CTE Buddy" : "CB"}</h2>
-              <button
-                className={`new-chat ${
-                  isExpanded ? "expanded-btn" : "collapsed-btn"
-                }`}
-              >
-                {isExpanded ? "+ Ask a Question" : <FaPencilAlt size={18} />}
-              </button>
+              <div className="icon-wrapper">
+                <button
+                  className={`new-chat ${
+                    isExpanded ? "expanded-btn" : "collapsed-btn"
+                  }`}
+                >
+                  {isExpanded ? "+ Ask a Question" : <FaPencilAlt size={18} />}
+                </button>
+                {!isExpanded && <span className="tooltip">Ask a Question</span>}
+              </div>
             </div>
 
             {/* Main Menu */}
             <nav className="sidebar-menu">
               <ul>
                 <li>
-                  <FaQuestionCircle className="icon" />
+                  <div className="icon-wrapper">
+                    <FaQuestionCircle className="icon" />
+                    {!isExpanded && <span className="tooltip">FAQs</span>}
+                  </div>
                   {isExpanded && <span>FAQs</span>}
                 </li>
+
                 <li>
-                  <FaBook className="icon" />
+                  <div className="icon-wrapper">
+                    <FaBook className="icon" />
+                    {!isExpanded && <span className="tooltip">Library</span>}
+                  </div>
                   {isExpanded && <span>Library</span>}
                 </li>
+
                 <li>
-                  <FaCalendarAlt className="icon" />
+                  <div className="icon-wrapper">
+                    <FaCalendarAlt className="icon" />
+                    {!isExpanded && (
+                      <span className="tooltip">Events / Calendar</span>
+                    )}
+                  </div>
                   {isExpanded && <span>Events / Calendar</span>}
                 </li>
+
                 <li>
-                  <FaUser className="icon" />
+                  <div className="icon-wrapper">
+                    <FaUser className="icon" />
+                    {!isExpanded && (
+                      <span className="tooltip">Profile / Settings</span>
+                    )}
+                  </div>
                   {isExpanded && <span>Profile / Settings</span>}
                 </li>
               </ul>
