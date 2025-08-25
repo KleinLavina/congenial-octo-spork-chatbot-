@@ -19,31 +19,30 @@ export function getCTEResponse(userInput: string): string {
     input.includes("good afternoon") ||
     input.includes("good evening")
   ) {
-    return `
-👋 **Hello! Welcome to SJC Maasin CTE**
+    return `Hello! 👋 Welcome to SJC Maasin CTE
 
-I can help you with:
-- 📚 Program information
-- 📝 Admissions & requirements
-- 💰 Scholarships & financial aid
-- 🎉 Campus life & facilities
+I'm here to help you discover everything about our College of Teacher Education.
 
-✨ What would you like to know?
-    `.trim();
+What can I assist you with today?
+• Program information and courses
+• Admission requirements and process
+• Scholarships and financial assistance
+• Campus facilities and student life
+
+Just ask me anything! ✨`;
   }
 
   if (input.includes("what's up") || input.includes("how are you")) {
-    return `
-😊 I'm here and ready to help!  
+    return `Hi there! 😊 I'm doing great and ready to help you learn about SJC Maasin CTE.
 
-**SJC Maasin College of Teacher Education**  
-📅 Established 1928  
+Quick Facts:
+📅 Established: 1928 (95+ years of excellence)
+🎓 Focus: Quality teacher education with Catholic values
 
 What brings you here today?
-- 🎓 Exploring our programs?
-- 📝 Need admission info?
-- 💰 Looking for scholarships?
-    `.trim();
+• Exploring our teacher education programs?
+• Need information about admissions?
+• Looking for scholarship opportunities?`;
   }
 
   // Programs and Courses
@@ -53,21 +52,22 @@ What brings you here today?
     input.includes("major") ||
     input.includes("degree")
   ) {
-    return `
-🎓 **SJC Maasin Teacher Education Programs**
+    return `🎓 Teacher Education Programs at SJC Maasin
 
-**Undergraduate**
-- BEEd (Elementary Education)
-- BSEd (Secondary Education)  
-  ↳ English, Math, Science, Social Studies, Filipino, PE
+Undergraduate Programs
+• BEEd - Bachelor of Elementary Education
+• BSEd - Bachelor of Secondary Education
+  ┗ Majors: English, Mathematics, Science, Social Studies, Filipino, PE
 
-**Graduate**
-- MAEd (Master of Arts in Education)
+Graduate Program
+• MAEd - Master of Arts in Education
 
-✨ Catholic values + Academic excellence since 1928  
+Why Choose Our Programs?
+✓ Catholic values integrated with academic excellence
+✓ 95+ years of proven educational leadership
+✓ Strong alumni network in education sector
 
-👉 Which program interests you?
-    `.trim();
+Which program would you like to know more about?`;
   }
 
   // Admissions and Enrollment
@@ -78,23 +78,22 @@ What brings you here today?
     input.includes("register") ||
     input.includes("requirement")
   ) {
-    return `
-📝 **Admission Requirements**
+    return `📋 Admission Requirements & Process
 
-**You'll need:**
-- ✅ High school diploma
-- ✅ SJC entrance exam
-- ✅ Medical certificate
-- ✅ Certificate of Good Moral Character
-- ✅ Birth certificate
-- ✅ Baptismal certificate (if Catholic)
+Required Documents
+✅ High school diploma/transcript
+✅ SJC entrance examination
+✅ Medical certificate
+✅ Certificate of Good Moral Character
+✅ Birth certificate (NSO/PSA)
+✅ Baptismal certificate (for Catholic applicants)
 
-**Application Deadlines**
-- 📅 1st Semester: March–April  
-- 📅 2nd Semester: August–September  
+Application Timeline
+🗓️ First Semester: March - April
+🗓️ Second Semester: August - September
 
-👉 Ready to apply? Need more details?
-    `.trim();
+Next Steps
+Ready to apply? I can provide more specific details about the application process or connect you with our admissions office.`;
   }
 
   // Student Teaching and Practicum
@@ -105,27 +104,27 @@ What brings you here today?
     input.includes("internship") ||
     input.includes("teaching practice")
   ) {
-    return `
-👩‍🏫 **Student Teaching Program**
+    return `👩‍🏫 Student Teaching Program
 
-**When**
-- 4th year, 1 full semester  
+Program Overview
+📅 Duration: Full semester during 4th year
+🎯 Goal: Real-world classroom experience with professional supervision
 
-**Where you'll teach**
-- 🏫 Public schools (Maasin City)
-- ⛪ Catholic schools in the region
-- 🌾 Rural schools in Southern Leyte  
+Teaching Placements
+• Public schools in Maasin City
+• Catholic schools throughout the region
+• Rural schools in Southern Leyte
 
-**What you'll do**
-- 📝 Lesson planning
-- 👩‍🏫 Teaching demonstrations
-- 📂 Portfolio development
-- 📊 Research projects  
+Key Activities
+• Comprehensive lesson planning
+• Classroom teaching demonstrations
+• Professional portfolio development
+• Educational research projects
 
-✨ Real classroom experience with expert supervision  
+Why It Matters
+This hands-on experience prepares you for actual teaching careers with confidence and competence.
 
-👉 Questions about placements?
-    `.trim();
+Want to know more about specific placement opportunities?`;
   }
 
   // LET and Licensing
@@ -136,25 +135,24 @@ What brings you here today?
     input.includes("teacher exam") ||
     input.includes("license")
   ) {
-    return `
-📊 **Licensure Exam for Teachers (LET)**
+    return `📊 Licensure Exam for Teachers (LET)
 
-**Schedule**
-- 📅 March & September (yearly)
-- 🎓 Take after graduation  
+Exam Schedule
+🗓️ When: March and September (annually)
+🎓 Eligibility: After graduation from education program
 
-**SJC Maasin Advantage**
-- 📈 Above-average passing rates
-- 📚 Comprehensive review programs
-- 👨‍🏫 Faculty mentoring & support  
+SJC Maasin Advantage
+📈 Consistently above-average passing rates
+👨‍🏫 Dedicated faculty mentoring and support
+📚 Comprehensive review programs
 
-**We offer**
-- 📝 Review courses
-- 📖 Study materials
-- 🎯 Practice exams  
+Our LET Support Services
+• Intensive review courses
+• Updated study materials and resources
+• Practice examinations and mock tests
+• One-on-one guidance sessions
 
-💪 Ready to succeed?
-    `.trim();
+Ready to succeed in your teaching career? Let me know if you need more details about our LET preparation programs.`;
   }
 
   // Campus Life
@@ -165,26 +163,31 @@ What brings you here today?
     input.includes("club") ||
     input.includes("campus life")
   ) {
-    return `
-🎉 **Campus Life at SJC Maasin**
+    return `🎉 Campus Life & Activities
 
-**Major Events**
-- ⛪ St. Joseph Feast Day (Mar 19)
-- 📚 Teacher Education Week
-- 🎄 Catholic Schools Week
-- 🏫 Foundation Day  
+Major Annual Events
+⛪ St. Joseph Feast Day (March 19)
+📚 Teacher Education Week
+🎄 Catholic Schools Week
+🏫 Foundation Day Celebration
 
-**Organizations**
-- 👥 Josephian Student Teachers (JSTA)
-- ⛪ Catholic Youth Organization
-- 📖 Subject clubs (Math, Science, English)
-- 🎵 SJC Glee Club
-- 🤝 Community Service Groups  
+Student Organizations
+👥 JSTA - Josephian Student Teachers Association
+⛪ Catholic Youth Organization
+📖 Academic clubs (Mathematics, Science, English)
+🎵 SJC Glee Club
+🤝 Community service groups
 
-✨ Build friendships, grow in faith, serve others  
+Growth Opportunities
+• Leadership development programs
+• Faith formation activities
+• Community outreach projects
+• Cultural and artistic expressions
 
-👉 Interested in joining?
-    `.trim();
+Our Philosophy
+Build lasting friendships, grow in faith, and develop a heart for service.
+
+Which activities interest you most?`;
   }
 
   // Scholarships and Financial Aid
@@ -195,28 +198,29 @@ What brings you here today?
     input.includes("fee") ||
     input.includes("cost")
   ) {
-    return `
-💰 **Scholarships & Financial Aid**
+    return `💰 Scholarships & Financial Assistance
 
-**Available Scholarships**
-- 🏆 Academic Excellence Scholarship
-- ⛪ Catholic School Graduate Discount
-- 🤝 Work-Study Programs
-- 🎯 Merit-Based Awards
-- 💪 Need-Based Assistance  
+Available Scholarships
+🏆 Academic Excellence Scholarship
+⛪ Catholic School Graduate Discount
+🤝 Work-Study Programs
+🎯 Merit-Based Awards
+💪 Need-Based Financial Assistance
 
-**Payment Options**
-- 📅 Flexible installment plans
-- 💳 Monthly payment schemes
-- 🏫 Campus work opportunities  
+Flexible Payment Options
+📅 Installment payment plans
+💳 Monthly payment schemes
+🏫 On-campus work opportunities
 
-**Requirements**
-- 📊 Maintain required GPA
-- 🤝 Community service hours
-- ⛪ Active campus participation  
+Scholarship Requirements
+📊 Maintain required GPA
+🤝 Complete community service hours
+⛪ Active participation in campus activities
 
-👉 Want to apply for financial assistance?
-    `.trim();
+Ready to Apply?
+Our financial aid office can help you explore all available options to make quality education affordable.
+
+Would you like specific information about any scholarship program?`;
   }
 
   // Facilities
@@ -227,30 +231,30 @@ What brings you here today?
     input.includes("lab") ||
     input.includes("classroom")
   ) {
-    return `
-🏫 **Campus Facilities**
+    return `🏫 Campus Facilities & Resources
 
-**Academic Buildings**
-- 📚 Modern library with digital resources
-- 💻 Computer laboratories
-- 🔬 Science laboratories
-- 🎨 Audio-visual rooms
-- 📖 Smart classrooms  
+Academic Infrastructure
+📚 Modern library with digital resources
+💻 State-of-the-art computer laboratories
+🔬 Fully-equipped science laboratories
+🎨 Audio-visual presentation rooms
+📱 Smart classrooms with modern technology
 
-**Student Services**
-- 🏥 Health center
-- 🍽️ Cafeteria
-- 🏃‍♂️ Sports facilities
-- ⛪ Campus chapel
-- 🚗 Parking areas  
+Student Support Services
+🏥 On-campus health center
+🍽️ Student cafeteria
+🏃‍♂️ Sports and recreation facilities
+⛪ Beautiful campus chapel
+🚗 Ample parking spaces
 
-**Special Features**
-- 🌐 WiFi throughout campus
-- 📱 Digital learning tools
-- 🎯 Practice teaching rooms  
+Modern Learning Features
+🌐 Campus-wide WiFi connectivity
+📱 Digital learning platforms
+🎯 Dedicated practice teaching rooms
+📖 Resource centers for each program
 
-👉 Want to visit our campus?
-    `.trim();
+Experience Our Campus
+We'd love to show you around! Would you like information about campus tours or visiting hours?`;
   }
 
   // Schedule and Academic Calendar
@@ -261,26 +265,27 @@ What brings you here today?
     input.includes("class") ||
     input.includes("time")
   ) {
-    return `
-📅 **Academic Calendar & Schedule**
+    return `📅 Academic Calendar & Class Schedule
 
-**Semester System**
-- 📚 1st Semester: June - October
-- 📖 2nd Semester: November - March
-- ☀️ Summer Term: April - May  
+Semester System
+📚 First Semester: June - October
+📖 Second Semester: November - March
+☀️ Summer Term: April - May
 
-**Class Schedule**
-- ⏰ Monday-Friday: 7:00 AM - 7:00 PM
-- 📅 Saturday: 7:00 AM - 12:00 PM
-- 🌅 Morning & afternoon classes available  
+Class Hours
+⏰ Weekdays: 7:00 AM - 7:00 PM
+📅 Saturdays: 7:00 AM - 12:00 PM
+🌅 Flexible morning and afternoon sessions
 
-**Important Dates**
-- 📝 Enrollment: May-June & October-November
-- 📊 Final Exams: End of each semester
-- 🎓 Graduation: March  
+Important Academic Dates
+📝 Enrollment Periods: May-June & October-November
+📊 Final Examinations: End of each semester
+🎓 Graduation: March
 
-👉 Need specific schedule information?
-    `.trim();
+Flexible Learning Options
+We offer various schedule options to accommodate working students and different learning preferences.
+
+Need information about specific class schedules or academic deadlines?`;
   }
 
   // About SJC Maasin
@@ -291,30 +296,30 @@ What brings you here today?
     input.includes("founded") ||
     input.includes("mission")
   ) {
-    return `
-🏛️ **About SJC Maasin**
+    return `🏛️ About Saint Joseph College Maasin
 
-**Founded 1928**
-- ⛪ Catholic institution
-- 👨‍💼 Run by diocesan clergy
-- 🌟 Nearly 100 years of excellence  
+Our Heritage
+📅 Founded: 1928 (95+ years of educational excellence)
+⛪ Catholic institution guided by diocesan clergy
+🌟 One of the Philippines' oldest Catholic colleges
 
-**Mission**
-- 🎓 Quality Catholic education
-- ❤️ Character formation
-- 🤝 Service to community
-- 🙏 Spiritual development  
+Mission Statement
+Providing quality Catholic education that emphasizes:
+• Academic excellence and innovation
+• Character formation and moral development
+• Community service and social responsibility
+• Spiritual growth and faith development
 
-**Vision**
-- 🌍 Premier Catholic college in Southern Leyte
-- 💡 Innovative & transformative education
-- 🌟 Holistic human development  
+Our Vision
+To be the premier Catholic institution in Southern Leyte, known for transformative education and holistic human development.
 
-**Core Values**
-- 🙏 Faith • 💪 Excellence • 🤝 Service • ❤️ Love  
+Core Values
+🙏 Faith • 💪 Excellence • 🤝 Service • ❤️ Love
 
-👉 Proud to be part of our legacy?
-    `.trim();
+Why This Matters
+Nearly a century of shaping educators who make a difference in communities across the Philippines and beyond.
+
+Interested in becoming part of this proud tradition?`;
   }
 
   // Student Life & Activities
@@ -324,28 +329,30 @@ What brings you here today?
     input.includes("extracurricular") ||
     input.includes("retreat")
   ) {
-    return `
-🎯 **Student Life & Activities**
+    return `🎯 Student Life & Personal Development
 
-**Organizations**
-- 👥 Student Teachers' Club
-- 📚 Community Literacy Programs
-- 🤝 Outreach & Teaching Missions
-- ⛪ Leadership & Values Formation Retreats  
+Leadership Organizations
+👥 Student Teachers' Club
+📚 Community Literacy Programs
+🤝 Educational outreach missions
+⛪ Faith formation and retreat programs
 
-**Hands-On Experience**
-- 🏫 Demo-teaching opportunities
-- 📖 Instructional materials creation
-- 🌱 Community service projects
-- ✨ Spiritual formation activities  
+Hands-On Learning Experiences
+🏫 Teaching demonstration opportunities
+📖 Educational materials development
+🌱 Community service projects
+✨ Spiritual growth activities
 
-**Building Future Leaders**
-- 💪 Leadership development
-- ❤️ Service orientation
-- 🙏 Faith formation  
+Character Development Focus
+💪 Leadership skills training
+❤️ Service-oriented mindset
+🙏 Faith-based formation
+🌟 Personal growth opportunities
 
-👉 Ready to make a difference?
-    `.trim();
+The SJC Experience
+We don't just prepare teachers—we form educators who are leaders, servants, and agents of positive change.
+
+Ready to make a meaningful difference in education and society?`;
   }
 
   // Achievements and Recognition
@@ -355,28 +362,29 @@ What brings you here today?
     input.includes("recognition") ||
     input.includes("accreditation")
   ) {
-    return `
-🏆 **Achievements & Recognition**
+    return `🏆 Achievements & Recognition
 
-**Academic Excellence**
-- ⭐ CHED Level II Accredited Programs
-- 📊 High LET passing rates
-- 🎓 Outstanding alumni in education  
+Academic Excellence
+⭐ CHED Level II Accredited Programs
+📊 Consistently high LET passing rates
+🎓 Outstanding alumni network in education
 
-**Awards & Recognition**
-- 🏅 Outstanding Catholic School
-- 👩‍🏫 Excellence in Teacher Preparation
-- 🌟 Community Service Awards
-- ⛪ Diocesan Recognition  
+Institutional Awards
+🏅 Outstanding Catholic School Recognition
+👩‍🏫 Excellence in Teacher Preparation
+🌟 Community Service Leadership Awards
+⛪ Diocesan Educational Excellence Recognition
 
-**Alumni Success**
-- 👨‍🏫 School principals & supervisors
-- 📚 Master teachers nationwide
-- 🌍 International educators
-- 🏛️ Education department officials  
+Alumni Success Stories
+👨‍🏫 School principals and educational supervisors
+📚 Master teachers and department heads nationwide
+🌍 International educators and consultants
+🏛️ Education department officials and policymakers
 
-👉 Join our tradition of excellence!
-    `.trim();
+What This Means for You
+Join a tradition of excellence with graduates who lead educational institutions and inspire students worldwide.
+
+Want to learn more about our alumni network and career opportunities?`;
   }
 
   // Why Choose SJC
@@ -386,34 +394,35 @@ What brings you here today?
     input.includes("benefit") ||
     input.includes("why sjc")
   ) {
-    return `
-⭐ **Why Choose SJC Maasin CTE?**
+    return `⭐ Why Choose SJC Maasin CTE?
 
-**Academic Advantages**
-- 📈 95+ years of educational excellence
-- 👨‍🏫 Highly qualified faculty
-- 📚 Modern teaching methods
-- 🎯 Small class sizes  
+Academic Advantages
+📈 95+ years of proven educational excellence
+👨‍🏫 Highly qualified and dedicated faculty
+📚 Modern, innovative teaching methodologies
+🎯 Personalized attention with small class sizes
 
-**Values Formation**
-- ⛪ Catholic identity & values
-- 🤝 Service-oriented education
-- 🙏 Spiritual growth opportunities
-- ❤️ Character development  
+Values-Based Education
+⛪ Strong Catholic identity and moral formation
+🤝 Service-oriented educational philosophy
+🙏 Spiritual growth and character development
+❤️ Holistic personal development approach
 
-**Career Preparation**
-- 👩‍🏫 Extensive practice teaching
-- 📊 LET review & support
-- 🌍 Alumni network
-- 💼 Job placement assistance  
+Career Preparation Excellence
+👩‍🏫 Comprehensive practice teaching programs
+📊 Outstanding LET preparation and support
+🌍 Extensive alumni network and connections
+💼 Career guidance and job placement assistance
 
-**Affordable Quality**
-- 💰 Reasonable tuition fees
-- 🎓 Scholarship opportunities
-- 📅 Flexible payment terms  
+Affordable Quality Education
+💰 Reasonable tuition fees and costs
+🎓 Multiple scholarship opportunities
+📅 Flexible payment plans and options
 
-👉 Ready to start your teaching journey?
-    `.trim();
+The Bottom Line
+Quality education, strong values, excellent preparation, and affordable costs—all in a supportive Catholic community.
+
+Ready to begin your journey as an exceptional educator?`;
   }
 
   // General Inquiries
@@ -424,24 +433,25 @@ What brings you here today?
     input.includes("ask") ||
     input.includes("information")
   ) {
-    return `
-💭 **General Inquiries Welcome!**
+    return `💭 I'm Here to Help!
 
-**I can help you with**
-- 📚 Academic programs (BEEd, BSEd)
-- 📝 Admission requirements
-- 💰 Scholarships & financial aid
-- 👩‍🏫 Student teaching placements
-- 📊 LET preparation
-- 🏫 Campus facilities
-- 🎉 Student activities  
+What I Can Assist You With
+• Academic programs (BEEd, BSEd, MAEd)
+• Admission requirements and procedures
+• Scholarship and financial aid options
+• Student teaching and practicum details
+• LET preparation and support services
+• Campus facilities and resources
+• Student activities and organizations
 
-**Need Specific Info?**
-- 📞 Call: (053) 570-8415
-- 📧 Email: cte@sjcmaasin.edu.ph  
+Need Direct Contact?
+📞 Phone: (053) 570-8415
+📧 Email: cte@sjcmaasin.edu.ph
 
-👉 What would you like to know more about?
-    `.trim();
+Quick Questions?
+Just ask me anything about SJC Maasin CTE, and I'll provide you with the information you need!
+
+What specific topic interests you most?`;
   }
 
   // Contact Information
@@ -453,28 +463,26 @@ What brings you here today?
     input.includes("address") ||
     input.includes("location")
   ) {
-    return `
-📞 **Contact Information**
+    return `📞 Contact Information
 
-**College of Teacher Education**
-🏫 Saint Joseph College  
-📍 Maasin City, Southern Leyte  
+College of Teacher Education
+🏫 Saint Joseph College
+📍 Tomas Oppus Street, Maasin City, Southern Leyte
 
-**Direct Contact**
-- ☎️ Tel: (053) 570-8415
-- 📧 Email: cte@sjcmaasin.edu.ph
-- 🌐 Website: www.sjcmaasin.edu.ph  
+Direct Contact Details
+☎️ Telephone: (053) 570-8415
+📧 Email: cte@sjcmaasin.edu.ph
+🌐 Website: www.sjcmaasin.edu.ph
 
-**Office Hours**
-- ⏰ Monday–Friday: 8:00 AM – 5:00 PM
-- 📅 Extended hours during enrollment  
+Office Hours
+⏰ Regular Hours: Monday-Friday, 8:00 AM - 5:00 PM
+📅 Extended Hours: During enrollment periods
 
-**Visit Us**
-🚗 Tomas Oppus Street, Maasin City  
-⛪ Campus chapel open daily  
+Visit Us
+🚗 Easy to find on Tomas Oppus Street
+⛪ Campus chapel open for daily visits
 
-👉 How can we assist you further?
-    `.trim();
+How can we assist you further?`;
   }
 
   // BEEd Program
@@ -483,28 +491,27 @@ What brings you here today?
     input.includes("elementary") ||
     input.includes("primary")
   ) {
-    return `
-🎓 **Bachelor of Elementary Education (BEEd)**
+    return `🎓 Bachelor of Elementary Education (BEEd)
 
-**Program Focus**
-- 👧👦 Generalist educators for primary levels
-- 📚 Mastery in teaching strategies
-- 🏫 Classroom management expertise
-- 📋 Curriculum development skills  
+Program Focus
+👧👦 Generalist educators for primary education levels
+📚 Mastery of effective teaching strategies
+🏫 Classroom management expertise
+📋 Curriculum development skills
 
-**What You'll Learn**
-- ✏️ Child psychology & development
-- 🎨 Creative teaching methods
-- 📊 Assessment & evaluation
-- 🌟 Values & character formation  
+What You'll Learn
+✏️ Child psychology and development
+🎨 Creative and innovative teaching methods
+📊 Student assessment and evaluation techniques
+🌟 Values education and character formation
 
-**Career Paths**
-- 🏫 Public/private elementary schools
-- 📚 Tutorial centers
-- 🌍 International schools  
+Career Opportunities
+🏫 Public and private elementary schools
+📚 Tutorial and learning centers
+🌍 International schools and institutions
 
-👉 Ready to shape young minds?
-    `.trim();
+Ready to Shape Young Minds?
+Elementary education is where learning foundations are built. Join us in making a difference in children's lives!`;
   }
 
   // BSEd Program
@@ -513,61 +520,58 @@ What brings you here today?
     input.includes("secondary") ||
     input.includes("specialization")
   ) {
-    return `
-🎓 **Bachelor of Secondary Education (BSEd)**
+    return `🎓 Bachelor of Secondary Education (BSEd)
 
-**Available Majors**
-- 📖 English Literature & Language
-- 🔬 Science Education
-- 🔢 Mathematics Education
-- 🇵🇭 Filipino Language & Literature
-- 🌍 Social Studies Education  
+Available Specializations
+📖 English Literature & Language
+🔬 Science Education
+🔢 Mathematics Education
+🇵🇭 Filipino Language & Literature
+🌍 Social Studies Education
 
-**Program Strengths**
-- 💡 Subject matter expertise
-- 👩‍🏫 Practical teaching experience
-- 🏫 Fieldwork & practice teaching
-- 📱 21st-century teaching methods  
+Program Strengths
+💡 Deep subject matter expertise
+👩‍🏫 Extensive practical teaching experience
+🏫 Comprehensive fieldwork and practice teaching
+📱 21st-century educational technologies
 
-**Career Opportunities**
-- 🏫 High school teaching positions
-- 📚 Education management
-- 🌍 International teaching  
+Career Pathways
+🏫 High school teaching positions
+📚 Educational administration and management
+🌍 International teaching opportunities
 
-👉 Which major interests you most?
-    `.trim();
+Which Major Interests You Most?
+Each specialization offers unique opportunities to inspire and educate the next generation of learners.`;
   }
 
   // Thank you responses
   if (input.includes("thank") || input.includes("thanks")) {
-    return `
-🙏 **You're very welcome!**
+    return `🙏 You're very welcome!
 
-Glad I could help with SJC Maasin info!  
+Glad I could help you learn about SJC Maasin CTE!
 
-*"Ad Majorem Dei Gloriam"*  
-*For the Greater Glory of God*  
+"Ad Majorem Dei Gloriam"
+For the Greater Glory of God
 
-✨ More questions? Just ask!  
-🌟 Ready to join our community?  
+✨ Have more questions? Just ask!
+🌟 Ready to join our educational community?
 📞 Contact us: (053) 570-8415
-    `.trim();
+
+We're here whenever you need us!`;
   }
 
   // Default response
-  return `
-🎓 **Welcome to SJC Maasin CTE**  
-*One of the Philippines' oldest Catholic colleges (since 1928)*  
+  return `🎓 Welcome to SJC Maasin CTE
+One of the Philippines' oldest Catholic colleges (since 1928)
 
-**I can help you with**
-- 📚 Teacher education programs
-- 📝 Admissions & requirements
-- 💰 Scholarships & financial aid
-- 👩‍🏫 Student teaching info
-- 📊 LET exam preparation
-- 🏫 Campus facilities & life
-- 📞 Contact information  
+I can help you with information about:
+• Teacher education programs (BEEd, BSEd, MAEd)
+• Admissions requirements and process
+• Scholarships and financial assistance
+• Student teaching and practicum programs
+• LET exam preparation and support
+• Campus facilities and student life
+• Contact information and office hours
 
-👉 What interests you most? Just type your question! 😊
-  `.trim();
+👉 What would you like to know? Just type your question! 😊`;
 }

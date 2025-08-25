@@ -5,6 +5,7 @@ import ChatMessages from "./components/ChatMessages";
 import type { Message } from "./backend/chatService";
 import { getCTEResponse } from "./backend/chatService";
 import "./css/chatbot.css";
+import { contextBasedSuggestions } from "./backend/suggestedReplies";
 
 const CTEChatbot: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([
@@ -58,7 +59,13 @@ const CTEChatbot: React.FC = () => {
           messages={messages}
           isTyping={isTyping}
           messagesEndRef={messagesEndRef}
+          suggestedReplies={contextBasedSuggestions["greetings"]}
+          onSuggestionClick={(reply) => {
+            setInputText(reply);
+            handleSend();
+          }}
         />
+
         <ChatInputArea
           inputText={inputText}
           setInputText={setInputText}
