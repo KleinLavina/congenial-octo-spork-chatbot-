@@ -5,7 +5,7 @@ import ChatMessages from "./components/ChatMessages";
 import type { Message } from "./backend/chatService2";
 import { getCTEResponse } from "./backend/chatService2";
 import "./css/chatbot.css";
-//import { contextBasedSuggestions } from "./backend/suggestedReplies";
+import type { SuggestedReply } from "./backend/suggestedReplies";
 
 const CTEChatbot: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([
@@ -18,6 +18,9 @@ const CTEChatbot: React.FC = () => {
   ]);
   const [inputText, setInputText] = useState<string>("");
   const [isTyping, setIsTyping] = useState<boolean>(false);
+  const [currentSuggestions, setCurrentSuggestions] = useState<
+    SuggestedReply[]
+  >([]);
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
 
   const scrollToBottom = () =>
@@ -38,17 +41,25 @@ const CTEChatbot: React.FC = () => {
     setMessages((prev) => [...prev, userMessage]);
     setInputText("");
     setIsTyping(true);
+    setCurrentSuggestions([]); // Clear suggestions when bot starts typing
 
     setTimeout(() => {
+      const response = getCTEResponse(inputText);
       const botMessage: Message = {
         id: messages.length + 2,
-        text: getCTEResponse(inputText),
+        text: response.message,
         isBot: true,
         timestamp: new Date(),
       };
       setMessages((prev) => [...prev, botMessage]);
+      setCurrentSuggestions(response.suggestions);
       setIsTyping(false);
     }, 1500);
+  };
+
+  const handleSuggestionClick = (reply: string) => {
+    setInputText(reply);
+    handleSend();
   };
 
   return (
@@ -59,11 +70,8 @@ const CTEChatbot: React.FC = () => {
           messages={messages}
           isTyping={isTyping}
           messagesEndRef={messagesEndRef}
-          //suggestedReplies={contextBasedSuggestions["greetings"]}
-          //onSuggestionClick={(reply) => {
-          //setInputText(reply);
-          //handleSend();
-          // }}
+          suggestedReplies={isTyping ? [] : currentSuggestions} // Hide suggestions when typing
+          onSuggestionClick={handleSuggestionClick}
         />
 
         <ChatInputArea

@@ -22,6 +22,30 @@ import {
   DEFAULT_RESPONSE,
 } from "./chatListResponse";
 
+// Import both the type and the actual suggestion data
+import {
+  type SuggestedReply,
+  contextBasedSuggestions,
+} from "./suggestedReplies";
+
+// Direct access shortcuts
+const greetingReplies = contextBasedSuggestions.greetings;
+const generalReplies = contextBasedSuggestions.general;
+const scholarshipReplies = contextBasedSuggestions.scholarships_overview;
+const admissionReplies = contextBasedSuggestions.admissions_overview;
+const facilitiesReplies = contextBasedSuggestions.facilities_overview;
+const studentLifeReplies = contextBasedSuggestions.student_life;
+const licensureReplies = contextBasedSuggestions.let;
+const contactReplies = contextBasedSuggestions.contact_info;
+const programReplies = contextBasedSuggestions.programs_overview;
+const beedReplies = contextBasedSuggestions.beed_details;
+const bsedReplies = contextBasedSuggestions.bsed_details;
+const studentTeachingReplies = contextBasedSuggestions.student_teaching;
+const aboutSjcReplies = contextBasedSuggestions.about_sjc;
+const advantagesReplies = contextBasedSuggestions.advantages;
+const quickNavReplies = contextBasedSuggestions.quick_nav;
+const thanksReplies = contextBasedSuggestions.thanks;
+
 export interface Message {
   id: number;
   text: string;
@@ -33,6 +57,12 @@ interface KeywordGroup {
   keywords: string[];
   priority: number;
   response: string;
+  suggestions: SuggestedReply[];
+}
+
+export interface ChatResponse {
+  message: string;
+  suggestions: SuggestedReply[];
 }
 
 function calculateMatchScore(input: string, keywords: string[]): number {
@@ -52,7 +82,7 @@ function calculateMatchScore(input: string, keywords: string[]): number {
   return score;
 }
 
-export function getCTEResponse(userInput: string): string {
+export function getCTEResponse(userInput: string): ChatResponse {
   const input = userInput
     .toLowerCase()
     .replace(/[^\w\s]/g, "")
@@ -63,6 +93,7 @@ export function getCTEResponse(userInput: string): string {
       keywords: ["beed", "elementary education", "primary education"],
       priority: 10,
       response: BEED_RESPONSE,
+      suggestions: beedReplies,
     },
     {
       keywords: [
@@ -75,6 +106,7 @@ export function getCTEResponse(userInput: string): string {
       ],
       priority: 10,
       response: BSED_RESPONSE,
+      suggestions: bsedReplies,
     },
     {
       keywords: [
@@ -88,6 +120,7 @@ export function getCTEResponse(userInput: string): string {
       ],
       priority: 9,
       response: PRACTICUM_RESPONSE,
+      suggestions: studentTeachingReplies,
     },
     {
       keywords: [
@@ -100,6 +133,7 @@ export function getCTEResponse(userInput: string): string {
       ],
       priority: 9,
       response: EXAM_RESPONSE,
+      suggestions: licensureReplies,
     },
     {
       keywords: [
@@ -115,6 +149,7 @@ export function getCTEResponse(userInput: string): string {
       ],
       priority: 8,
       response: SCHOLARSHIP_RESPONSE,
+      suggestions: scholarshipReplies,
     },
     {
       keywords: [
@@ -135,6 +170,7 @@ export function getCTEResponse(userInput: string): string {
       ],
       priority: 8,
       response: ENROLLMENT_RESPONSE,
+      suggestions: admissionReplies,
     },
     {
       keywords: [
@@ -151,6 +187,7 @@ export function getCTEResponse(userInput: string): string {
       ],
       priority: 7,
       response: PROGRAM_RESPONSE,
+      suggestions: programReplies,
     },
     {
       keywords: [
@@ -167,6 +204,7 @@ export function getCTEResponse(userInput: string): string {
       ],
       priority: 7,
       response: FACILITY_RESPONSE,
+      suggestions: facilitiesReplies,
     },
     {
       keywords: [
@@ -183,6 +221,7 @@ export function getCTEResponse(userInput: string): string {
       ],
       priority: 7,
       response: SCHEDULE_RESPONSE,
+      suggestions: quickNavReplies,
     },
     {
       keywords: [
@@ -198,6 +237,7 @@ export function getCTEResponse(userInput: string): string {
       ],
       priority: 6,
       response: EVENT_RESPONSE,
+      suggestions: generalReplies,
     },
     {
       keywords: [
@@ -212,6 +252,7 @@ export function getCTEResponse(userInput: string): string {
       ],
       priority: 6,
       response: ACHIEVEMENT_RESPONSE,
+      suggestions: generalReplies,
     },
     {
       keywords: [
@@ -224,6 +265,7 @@ export function getCTEResponse(userInput: string): string {
       ],
       priority: 6,
       response: ADVANTAGE_RESPONSE,
+      suggestions: advantagesReplies,
     },
     {
       keywords: [
@@ -236,6 +278,7 @@ export function getCTEResponse(userInput: string): string {
       ],
       priority: 5,
       response: ABOUT_RESPONSE,
+      suggestions: aboutSjcReplies,
     },
     {
       keywords: [
@@ -247,6 +290,7 @@ export function getCTEResponse(userInput: string): string {
       ],
       priority: 5,
       response: STUDENT_LIFE_RESPONSE,
+      suggestions: studentLifeReplies,
     },
     {
       keywords: [
@@ -264,6 +308,7 @@ export function getCTEResponse(userInput: string): string {
       ],
       priority: 5,
       response: CONTACT_RESPONSE,
+      suggestions: contactReplies,
     },
     {
       keywords: [
@@ -277,11 +322,13 @@ export function getCTEResponse(userInput: string): string {
       ],
       priority: 4,
       response: INQUIRY_RESPONSE,
+      suggestions: generalReplies,
     },
     {
       keywords: ["thank", "thanks", "thank you", "appreciate", "appreciation"],
       priority: 3,
       response: THANKS_RESPONSE,
+      suggestions: thanksReplies,
     },
     {
       keywords: [
@@ -295,16 +342,21 @@ export function getCTEResponse(userInput: string): string {
       ],
       priority: 2,
       response: GREETING_RESPONSE,
+      suggestions: greetingReplies,
     },
     {
       keywords: ["whats up", "how are you", "howdy", "how are things"],
       priority: 1,
       response: HOW_ARE_YOU_RESPONSE,
+      suggestions: generalReplies,
     },
   ];
 
   if (!input) {
-    return DEFAULT_RESPONSE;
+    return {
+      message: DEFAULT_RESPONSE,
+      suggestions: generalReplies,
+    };
   }
 
   let bestMatch: KeywordGroup | null = null;
@@ -321,5 +373,15 @@ export function getCTEResponse(userInput: string): string {
     }
   }
 
-  return bestMatch && highestScore >= 5 ? bestMatch.response : DEFAULT_RESPONSE;
+  if (bestMatch && highestScore >= 5) {
+    return {
+      message: bestMatch.response,
+      suggestions: bestMatch.suggestions,
+    };
+  }
+
+  return {
+    message: DEFAULT_RESPONSE,
+    suggestions: generalReplies,
+  };
 }

@@ -23,29 +23,30 @@ What brings you here today?
 • Need information about admissions?
 • Looking for scholarship opportunities?`;
 
-export const SCHOLARSHIP_RESPONSE = `💰 Scholarships & Financial Assistance
+export const SCHOLARSHIP_RESPONSE = `💰 Scholarships & Discounts at SJC Maasin
 
-Available Scholarships
-🏆 Academic Excellence Scholarship
-⛪ Catholic School Graduate Discount
-🤝 Work-Study Programs
-🎯 Merit-Based Awards
-💪 Need-Based Financial Assistance
+Available Scholarships & Grants
+🎓 CSP
+🔬 DOST (Department of Science and Technology)
+⛪ Diocesan Scholarship
+🤝 YSLEP / Caritas Manila
+💃 School Dance Troupe / KAST
+🎶 SJC Shepherd’s Voice Choir
+🏅 Varsity / Outstanding Athletes
+📚 Academic Scholarship
+🌟 CORE
+👨‍👩‍👧 SJC Employee Special Discount
 
-Flexible Payment Options
-📅 Installment payment plans
-💳 Monthly payment schemes
-🏫 On-campus work opportunities
+General Requirements
+📊 Maintain the required GPA / academic standing
+🤝 Participation in related programs or activities
+⛪ Endorsements for church or diocesan scholarships
+🏅 Active involvement in sports, arts, or service (for talent/athlete grants)
 
-Scholarship Requirements
-📊 Maintain required GPA
-🤝 Complete community service hours
-⛪ Active participation in campus activities
+💡 Ready to Apply?
+Visit the SJC Financial Aid / Scholarship Office to learn more and apply.
 
-Ready to Apply?
-Our financial aid office can help you explore all available options to make quality education affordable.
-
-Would you like specific information about any scholarship program?`;
+Would you like details on a specific scholarship?`;
 
 export const PROGRAM_RESPONSE = `🎓 Teacher Education Programs at SJC Maasin
 

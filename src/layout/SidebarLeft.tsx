@@ -46,16 +46,10 @@ const SidebarLeft: React.FC = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const toggleSidebar = () => setIsVisible(!isVisible);
-
   return (
     <>
       {/* Menu icon for small screens */}
-      {canToggle && (
-        <div className="menu-icon" onClick={toggleSidebar}>
-          &#9776;
-        </div>
-      )}
+      {canToggle && <div className="menu-icon">&#9776;</div>}
 
       {/* Sidebar */}
       {isVisible && (
