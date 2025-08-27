@@ -108,9 +108,7 @@ const SidebarLeft: React.FC = () => {
                 <li>
                   <div className="icon-wrapper">
                     <FaCalendarAlt className="icon" />
-                    {!isExpanded && (
-                      <span className="tooltip">Events / Calendar</span>
-                    )}
+                    {!isExpanded && <span className="tooltip">Events</span>}
                   </div>
                   {isExpanded && <span>Events / Calendar</span>}
                 </li>
@@ -118,9 +116,7 @@ const SidebarLeft: React.FC = () => {
                 <li>
                   <div className="icon-wrapper">
                     <FaUser className="icon" />
-                    {!isExpanded && (
-                      <span className="tooltip">Profile / Settings</span>
-                    )}
+                    {!isExpanded && <span className="tooltip">Profile</span>}
                   </div>
                   {isExpanded && <span>Profile / Settings</span>}
                 </li>

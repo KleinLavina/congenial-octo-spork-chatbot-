@@ -1,0 +1,81 @@
+.chat-header {
+  background: #02004e;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 12px;
+  border-radius: 12px 12px 0 0;
+  flex-shrink: 0;                  /* Don't allow shrinking */
+  height: 30px;
+  margin-top: 10px;                /* Fixed height (~10% of typical container) */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  /* 3D box shadow */
+  box-shadow: 
+    0 2px 5px rgba(0,0,0,0.2),   /* subtle small shadow */
+    0 4px 10px rgba(0,0,0,0.2),  /* mid-depth shadow */
+    0 8px 20px rgba(0,0,0,0.15); /* larger soft shadow for 3D effect */
+}
+
+.chat-icon {
+  cursor: pointer;
+  transition: transform 0.2s, color 0.2s;
+  font-size: 22px; /* increase size via CSS */
+}
+
+.chat-icon:hover {
+  color: #ffeb3b;
+  transform: scale(1.2);
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.chat-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #0074d9;
+  color: white;
+}
+
+.chat-title {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Container for avatar + online status */
+.avatar-container {
+  position: relative;
+  border:1px solid black;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+/* Online indicator dot */
+.online-indicator {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 10px;
+  height: 10px;
+  background-color: #4caf50; /* green for online */
+  border: 2px solid #0074d9; /* matches header background */
+  border-radius: 50%;
+}

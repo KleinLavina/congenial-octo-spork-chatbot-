@@ -2,10 +2,10 @@ import React, { useState, useRef, useEffect } from "react";
 import ChatHeader from "./components/ChatHeader";
 import ChatInputArea from "./components/ChatInputArea";
 import ChatMessages from "./components/ChatMessages";
-import type { Message } from "./backend/chatService";
-import { getCTEResponse } from "./backend/chatService";
+import type { Message } from "./backend/chatService2";
+import { getCTEResponse } from "./backend/chatService2";
 import "./css/chatbot.css";
-import { contextBasedSuggestions } from "./backend/suggestedReplies";
+//import { contextBasedSuggestions } from "./backend/suggestedReplies";
 
 const CTEChatbot: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([
@@ -59,11 +59,11 @@ const CTEChatbot: React.FC = () => {
           messages={messages}
           isTyping={isTyping}
           messagesEndRef={messagesEndRef}
-          suggestedReplies={contextBasedSuggestions["greetings"]}
-          onSuggestionClick={(reply) => {
-            setInputText(reply);
-            handleSend();
-          }}
+          //suggestedReplies={contextBasedSuggestions["greetings"]}
+          //onSuggestionClick={(reply) => {
+          //setInputText(reply);
+          //handleSend();
+          // }}
         />
 
         <ChatInputArea
