@@ -1,15 +1,12 @@
 import React from "react";
 import SidebarLeft from "./SidebarLeft";
-import SidebarRight from "./SidebarRight";
-import Chat from "./Chat";
-import Chatbot from "./chatbot";
+import CTEChatbot from "./CTEChatbot";
 
 const Layout: React.FC = () => {
   return (
     <div className="app">
       <SidebarLeft />
-      <Chat />
-      <SidebarRight />
+      <CTEChatbot />
     </div>
   );
 };
