@@ -1,0 +1,22 @@
+.outer-container {
+  position: fixed;       /* Covers the whole viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+
+  display: flex;         /* For centering inner div */
+  justify-content: center;
+  align-items: center;
+}
+
+.inner-container {
+  background-color: white;
+  width: 80%;            /* 80% of outer width */
+  height: 90%;           /* 90% of outer height */
+  border-radius: 12px;   /* Rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+  padding: 20px;         /* Some space inside */
+  text-align: center;    /* Optional */
+}

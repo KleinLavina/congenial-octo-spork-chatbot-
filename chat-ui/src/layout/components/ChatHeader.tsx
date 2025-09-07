@@ -2,7 +2,7 @@ import React from "react";
 {
   /*import { Cpu } from "lucide-react";*/
 }
-import logo from "../../assets/furina.jpg";
+import logo from "../../assets/f-teacher.png";
 import { FiMoreHorizontal, FiBookmark, FiShare2 } from "react-icons/fi";
 import "../css/chatheader.css";
 
@@ -31,6 +31,16 @@ const ChatHeader: React.FC<{ title: string }> = ({ title }) => {
 
       {/* Right Section */}
       <div className="right-section">
+        <label className="switch-button" htmlFor="switch">
+          <div className="switch-outer">
+            <input id="switch" type="checkbox" />
+            <div className="button">
+              <span className="button-toggle"></span>
+              <span className="button-indicator"></span>
+            </div>
+          </div>
+        </label>
+
         <FiMoreHorizontal className="chat-icon" />
         <FiBookmark className="chat-icon" />
         <FiShare2 className="chat-icon" />

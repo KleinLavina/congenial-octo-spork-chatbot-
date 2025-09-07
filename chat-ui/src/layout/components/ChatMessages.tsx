@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { User, Cpu } from "lucide-react";
+import { User } from "lucide-react";
 import type { Message } from "../backend/chatService2";
 import "../css/chatmessage.css";
 import type { SuggestedReply } from "../backend/suggestedReplies";
+import logo from "../../assets/f-teacher.png";
 import { motion } from "framer-motion";
 
 // Variants for animation
@@ -11,7 +12,7 @@ const containerVariants = {
   show: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2, // delay between each bubble
+      staggerChildren: 0.9, // delay between each bubble
     },
   },
 };
@@ -63,7 +64,7 @@ const ChatMessages: React.FC<ChatMessagesProps> = ({
       >
         <div className="chat-message-inner">
           <div className="chat-avatar-small">
-            {msg.isBot ? <Cpu /> : <User />}
+            {msg.isBot ? <img src={logo} /> : <User />}
           </div>
           <div
             className={`chat-bubble ${
@@ -90,7 +91,7 @@ const ChatMessages: React.FC<ChatMessagesProps> = ({
       <div className="chat-message bot">
         <div className="chat-message-inner">
           <div className="chat-avatar-small">
-            <Cpu />
+            <img src={logo}></img>
           </div>
           <div className="chat-bubble bot-bubble typing">
             <span></span>

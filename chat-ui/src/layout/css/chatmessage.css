@@ -45,10 +45,9 @@
 }
 
 .chat-avatar-small {
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   margin-bottom: 8px;
-  padding: 6px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -57,7 +56,11 @@
   font-weight: bold;
   font-size: 14px;
 }
-
+.chat-avatar-small img{
+  height:100%;
+  width:100%;
+  border-radius: 50%;
+}
 /* Bot avatar - blue theme */
 .chat-message.bot .chat-avatar-small {
   background: linear-gradient(135deg, #3b82f6, #2563eb);
