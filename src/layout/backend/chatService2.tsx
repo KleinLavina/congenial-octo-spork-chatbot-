@@ -319,6 +319,7 @@ export function getCTEResponse(userInput: string): ChatResponse {
         "questions",
         "ask",
         "information",
+        "explore",
       ],
       priority: 4,
       response: INQUIRY_RESPONSE,

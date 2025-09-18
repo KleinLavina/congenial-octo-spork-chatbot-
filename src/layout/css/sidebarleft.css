@@ -64,28 +64,29 @@
 }
 
 .toggle-btn {
-  background-color: #0074d9;   /* your secondary color */
-  color: #e8ebe4;              /* your text color */
-  border: 1px solid black;
-  border-radius: 20px;          /* makes it round */
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  border-radius: 18px;
   width: 100%;
   font-size: 1rem;
+   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
+  transition: all 0.3s ease;
+  padding: 8px 16px; /* Reduced padding */
+  box-shadow: 0 2px 6px rgba(59, 130, 246, 0.2);
+  font-family: 'Century Gothic', 'CenturyGothic', 'AppleGothic', sans-serif;
+  outline: none;
 }
 
-/* Hover effect */
-.toggle-btn:hover { 
-  background-color: #0bc71a;   /* accent color */
-  transform: scale(0.9);       /* slightly bigger */
+.toggle-btn:hover {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  transform: translateY(-1px);
+  outline: none;
+}
+.toggle-btn:focus{
+  outline:none
 }
 
-
-/* Optional: custom focus */
-.toggle-sidebar:focus {
-  outline: 2px solid #0074d9; /* blue border on focus */
-  outline-offset: 2px;
-}
 
 
 /* Hover effect */
@@ -97,46 +98,73 @@
 
 
 .sidebar-top .logo {
-  font-weight: bold;
-  margin-bottom: 20px;
-  text-align: center;
+  display: flex;              /* Enable flexbox */
+  align-items: center;        /* Align vertically center */
+  justify-content: center;    /* Keep them centered horizontally */
+  gap: 8px;                   /* Space between logo and text */
+  font-weight: 700;
+  margin-bottom: 15px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-size: 18px;
+  color: #1f2937;
+  font-family: 'Century Gothic', 'CenturyGothic', 'AppleGothic', sans-serif;
 }
+
+.sidebar-top .logo img {
+  height: 40px; /* Adjust so it fits with text */
+  width: auto;
+}
+
 
 /* Ask a Question Button */
 .new-chat {
   width: 100%;
   border: none;
-  padding: 10px 0;
-  border-radius: 5px;
+  padding: 10px 0; /* Reduced padding */
+  border-radius: 18px;
   cursor: pointer;
   color: white;
-  background-color: #0074d9;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 13px; /* Smaller font */
+  font-family: 'Century Gothic', 'CenturyGothic', 'AppleGothic', sans-serif;
+  box-shadow: 0 2px 6px rgba(59, 130, 246, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  margin: 5px 0; /* Reduced margin */
+  outline:none;
+}
+
+.new-chat:hover {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  transform: translateY(-1px);
+  outline:none;
+}
+.new-chat:focus{
+  outline:none;
+}
+.new-chat.expanded-btn,
+.new-chat.collapsed-btn {
+  padding: 8px; /* Reduced padding */
+  font-size: 0.9rem;
+  border-radius: 18px;
   transition: all 0.3s ease;
 }
 
-.new-chat.expanded-btn,
-.new-chat.collapsed-btn {
-  padding: 8px;
-  font-size: 1rem;
-  border-radius: 20px;
-  transition: background-color 0.3s, transform 0.2s;
-  border: 1px solid black;
-}
 .new-chat.expanded-btn:hover,
 .new-chat.collapsed-btn:hover {
-  background-color: #0bc71a;   /* accent color */
-  transform: scale(0.9);       /* slightly smaller */
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  transform: scale(0.96);
 }
 
 
 
-/* Main Menu */
 .sidebar-menu ul {
   list-style: none;
   overflow: visible;
@@ -148,29 +176,61 @@
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 10px;
-  padding: 10px 0;
-  margin: 10px 0;
+  padding: 8px 12px; /* Reduced padding */
+  margin: 6px 0; /* Reduced margin */
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
+  transition: all 0.3s ease;
+  border-radius: 10px;
+  color: #64748b;
+  font-weight: 500;
+  font-family: 'Century Gothic', 'CenturyGothic', 'AppleGothic', sans-serif;
+  font-size: 18px; /* Smaller font */
 }
 
 .sidebar-menu li:hover {
-  background-color: #e0e0e0;
-  transform: scale(0.9);
-  border-radius: 20px;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  transform: translateX(2px);
+}
+
+.sidebar.collapsed .sidebar-menu li {
+  justify-content: center;
+  padding: 8px;
+  margin: 4px 0;
+}
+
+.sidebar.collapsed .sidebar-menu .menu-text {
+  display: none;
 }
 
 .icon {
-  font-size: 1.2rem;
+  font-size: 1.1rem; /* Smaller icons */
+  width: 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.sidebar-menu li:hover .icon {
+  transform: scale(1.08);
 }
 
 /* Footer */
+/* Footer - Compact */
 .sidebar-footer {
   margin-top: auto;
-  font-size: 0.8rem;
-  color: #555;
+  font-size: 0.75rem; /* Smaller font */
+  color: #64748b;
+  text-align: center;
+  padding: 12px 0; /* Reduced padding */
+  font-family: 'Century Gothic', 'CenturyGothic', 'AppleGothic', sans-serif;
+  border-top: 1px solid #e2e8f0;
+  margin-top: 15px; /* Reduced margin */
+}
+
+.sidebar.collapsed .sidebar-footer {
+  display: none;
 }
 .icon-wrapper {
   position: relative; /* tooltip anchors here */

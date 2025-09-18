@@ -1,9 +1,9 @@
 import React from "react";
 import "./App.css";
-import Layout from "./layout/Layout";
+import MainLayout from "./layout/MainLayout";
 
 const App: React.FC = () => {
-  return <Layout />;
+  return <MainLayout />;
 };
 
 export default App;

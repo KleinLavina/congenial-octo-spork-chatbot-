@@ -1,18 +1,25 @@
 import React, { useState, useEffect } from "react";
 import "./css/layout.css";
 import "./css/sidebarleft.css";
-import {
-  FaBook,
-  FaCalendarAlt,
-  FaQuestionCircle,
-  FaUser,
-  FaPencilAlt,
-} from "react-icons/fa";
+import { FaInfoCircle, FaQuestionCircle, FaUser, FaRedo } from "react-icons/fa";
+import logoSymbol from "../assets/ctebuddylogo.png";
 
-const SidebarLeft: React.FC = () => {
+type SidebarPops = {
+  onOpenModal: () => void;
+  onAboutModal: () => void;
+  onProfileModal: () => void;
+};
+const SidebarLeft: React.FC<SidebarPops> = ({
+  onOpenModal,
+  onAboutModal,
+  onProfileModal,
+}) => {
   const [isExpanded, setIsExpanded] = useState(true);
   const [isVisible, setIsVisible] = useState(true);
   const [canToggle, setCanToggle] = useState(false); // menu icon visibility
+  const handleRefresh = () => {
+    window.location.reload();
+  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -63,27 +70,44 @@ const SidebarLeft: React.FC = () => {
               onClick={() => setIsExpanded(!isExpanded)}
             >
               {isExpanded ? "«  " : "»"}
+              {isExpanded && <span> Minimize</span>}
             </button>
 
             {/* Top Section */}
             <div className="sidebar-top">
-              <h2 className="logo">{isExpanded ? "CTE Buddy" : "CB"}</h2>
+              <h2 className="logo">
+                {isExpanded && (
+                  <img
+                    src={logoSymbol}
+                    alt="CTE Buddy Logo"
+                    className="w-6 h-6 inline-block"
+                  />
+                )}
+                {isExpanded ? "CTE Buddy" : "CB"}
+              </h2>
               <div className="icon-wrapper">
                 <button
                   className={`new-chat ${
                     isExpanded ? "expanded-btn" : "collapsed-btn"
                   }`}
+                  onClick={handleRefresh}
                 >
-                  {isExpanded ? "+ Ask a Question" : <FaPencilAlt size={18} />}
+                  {isExpanded ? (
+                    <>
+                      <FaRedo size={18} /> Refresh Chat
+                    </>
+                  ) : (
+                    <FaRedo size={18} />
+                  )}
                 </button>
-                {!isExpanded && <span className="tooltip">Ask a Question</span>}
+                {!isExpanded && <span className="tooltip">Refresh Chat</span>}
               </div>
             </div>
 
             {/* Main Menu */}
             <nav className="sidebar-menu">
               <ul>
-                <li>
+                <li onClick={onOpenModal}>
                   <div className="icon-wrapper">
                     <FaQuestionCircle className="icon" />
                     {!isExpanded && <span className="tooltip">FAQs</span>}
@@ -91,23 +115,15 @@ const SidebarLeft: React.FC = () => {
                   {isExpanded && <span>FAQs</span>}
                 </li>
 
-                <li>
+                <li onClick={onAboutModal}>
                   <div className="icon-wrapper">
-                    <FaBook className="icon" />
-                    {!isExpanded && <span className="tooltip">Library</span>}
+                    <FaInfoCircle className="icon" />
+                    {!isExpanded && <span className="tooltip">About</span>}
                   </div>
-                  {isExpanded && <span>Library</span>}
+                  {isExpanded && <span>About CTE Buddy</span>}
                 </li>
 
-                <li>
-                  <div className="icon-wrapper">
-                    <FaCalendarAlt className="icon" />
-                    {!isExpanded && <span className="tooltip">Events</span>}
-                  </div>
-                  {isExpanded && <span>Events / Calendar</span>}
-                </li>
-
-                <li>
+                <li onClick={onProfileModal}>
                   <div className="icon-wrapper">
                     <FaUser className="icon" />
                     {!isExpanded && <span className="tooltip">Profile</span>}

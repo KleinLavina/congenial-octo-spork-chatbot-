@@ -1,0 +1,81 @@
+
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  /* Adds a smooth fade-in animation for the backdrop */
+  animation: fadeIn 0.3s forwards;
+}
+
+/* Modal Container: The main body of the modal */
+.modal-container {
+  height: 90vh;
+  max-height: 90vh;
+  width: 80vw;
+  max-width: 900px;
+  border-radius: 12px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 
+    0 10px 20px rgba(0, 0, 0, 0.05), /* Soft, wide shadow for lift */
+    0 6px 6px rgba(0, 0, 0, 0.1), /* Sharper shadow for definition */
+    10px 10px 20px rgba(0, 0, 0, 0.15); /* Distinct, right-bottom shadow for directionality */
+  border: 1px solid #e0e0e0;
+  overflow: hidden; /* Prevents child content from overflowing the rounded corners */
+  /* Adds a subtle scale-in animation */
+  animation: scaleIn 0.3s forwards;
+}
+
+/* Modal Content: The internal content area */
+.modal-content {
+  /* Removed border to keep a clean, borderless look inside the container */
+  /* The border from .modal-container is sufficient */
+  height: 100%;
+  width: 100%;
+  padding: 24px; /* Generous padding for content, making it less cramped */
+  box-sizing: border-box; /* Ensures padding is included in the element's total size */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Pushes the close button to the bottom */
+  align-items: center;
+}
+
+/* Modal Close Button */
+.modal-content button {
+  background-color: #f4f4f4;
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  margin-top: 16px; /* Adds space above the button */
+}
+
+/* Hover effect for the close button */
+.modal-content button:hover {
+  background-color: #e0e0e0;
+  transform: translateY(-2px); /* Adds a subtle lift effect on hover */
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.95); }
+  to { transform: scale(1); }
+}
