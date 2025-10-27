@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Menu, RefreshCw, User, HelpCircle, Facebook } from "lucide-react";
-import logo from "../../assets/f-teacher.png";
+import { Menu, RefreshCw, HelpCircle, Facebook } from "lucide-react";
+import logo from "../../assets/ashbro.png";
 import "../css/chatheader.css";
 
 const ChatHeader: React.FC<{ title: string }> = ({ title }) => {
@@ -36,11 +36,6 @@ const ChatHeader: React.FC<{ title: string }> = ({ title }) => {
 
   const handleFAQs = () => {
     console.log("FAQs clicked");
-    setIsMenuOpen(false);
-  };
-
-  const handleProfile = () => {
-    console.log("Profile clicked");
     setIsMenuOpen(false);
   };
 
@@ -91,14 +86,6 @@ const ChatHeader: React.FC<{ title: string }> = ({ title }) => {
               <RefreshCw size={18} />
               <span>Refresh</span>
             </button>
-            <button
-              className="header-btn"
-              onClick={handleProfile}
-              title="Profile"
-            >
-              <User size={18} />
-              <span>Profile</span>
-            </button>
           </div>
 
           {/* Mobile Menu Button (visible on small screens) */}
@@ -121,10 +108,6 @@ const ChatHeader: React.FC<{ title: string }> = ({ title }) => {
                 <button className="dropdown-item" onClick={handleRefresh}>
                   <RefreshCw size={16} />
                   <span>Refresh Chat</span>
-                </button>
-                <button className="dropdown-item" onClick={handleProfile}>
-                  <User size={16} />
-                  <span>Profile</span>
                 </button>
                 {/* Facebook Page Option */}
                 <button className="dropdown-item" onClick={handleFacebook}>

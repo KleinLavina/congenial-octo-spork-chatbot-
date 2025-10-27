@@ -63,6 +63,21 @@ Why Shop With Us?
 ✅ Affordable student-friendly prices
 ✅ Custom orders available for groups`;
 
+export const ABOUT_CREATOR_RESPONSE = `🛍️ About Creator of the Chatbot
+
+Chatbot Development Team
+The names developed by your team, based on the provided text, are:
+
+Lead Developer: Klein Lavina
+
+Team Member: Tristan Mantilla
+
+Team Member: Charlie Otadoy
+
+Team Member: John Maiko Siano
+
+`;
+
 export const PRODUCTS_RESPONSE = `🛍️ Available SJC Merchandise
 
 HEADWEAR

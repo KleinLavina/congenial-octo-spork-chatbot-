@@ -3,6 +3,7 @@ import {
   GREETING_RESPONSE,
   HOW_ARE_YOU_RESPONSE,
   ABOUT_SJC_RESPONSE,
+  ABOUT_CREATOR_RESPONSE,
   ABOUT_TATAK_RESPONSE,
   PRODUCTS_RESPONSE,
   PRICING_RESPONSE,
@@ -155,7 +156,7 @@ export function getMerchandiseResponse(userInput: string): ChatResponse {
         "have",
         "left",
       ],
-      priority: 9,
+      priority: 7,
       response: AVAILABILITY_RESPONSE,
       suggestions: availabilityReplies,
     },
@@ -181,7 +182,7 @@ export function getMerchandiseResponse(userInput: string): ChatResponse {
         "umbrella",
         "umbrellas",
       ],
-      priority: 8,
+      priority: 9,
       response: PRODUCTS_RESPONSE,
       suggestions: productsReplies,
     },
@@ -270,6 +271,8 @@ export function getMerchandiseResponse(userInput: string): ChatResponse {
     },
     {
       keywords: [
+        "founder",
+        "business",
         "about tatak",
         "tatak josephinian",
         "who are you",
@@ -282,6 +285,23 @@ export function getMerchandiseResponse(userInput: string): ChatResponse {
       response: ABOUT_TATAK_RESPONSE,
       suggestions: aboutStoreReplies,
     },
+
+    {
+      keywords: [
+        "developed",
+        "chatbot",
+        "created this chatbot",
+        "creator",
+        "develop",
+        "development",
+        "naghimo",
+        "created you",
+      ],
+      priority: 6,
+      response: ABOUT_CREATOR_RESPONSE,
+      suggestions: generalReplies,
+    },
+
     {
       keywords: [
         "payment method",

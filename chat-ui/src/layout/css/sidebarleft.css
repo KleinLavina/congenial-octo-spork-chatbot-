@@ -113,7 +113,8 @@
 }
 
 .sidebar-top .logo img {
-  height: 40px; /* Adjust so it fits with text */
+  height: 70px; /* Adjust so it fits with text */
+  border-radius: 50%;
   width: auto;
 }
 

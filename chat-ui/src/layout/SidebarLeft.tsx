@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./css/layout.css";
 import "./css/sidebarleft.css";
-import { FaQuestionCircle, FaUser, FaRedo, FaFacebook } from "react-icons/fa";
-import logoSymbol from "../assets/ctebuddylogo.png";
+import { FaQuestionCircle, FaRedo, FaFacebook } from "react-icons/fa";
+import logoSymbol from "../assets/haha.png";
 
 const SidebarLeft: React.FC = () => {
   const [isExpanded, setIsExpanded] = useState(true);
@@ -77,7 +77,7 @@ const SidebarLeft: React.FC = () => {
                     className="w-6 h-6 inline-block"
                   />
                 )}
-                {isExpanded ? "Merchy Buddy" : "MB"}
+                {isExpanded ? "J-Gear" : "J-G"}
               </h2>
               <div className="icon-wrapper">
                 <button
@@ -107,14 +107,6 @@ const SidebarLeft: React.FC = () => {
                     {!isExpanded && <span className="tooltip">FAQs</span>}
                   </div>
                   {isExpanded && <span>FAQs</span>}
-                </li>
-
-                <li>
-                  <div className="icon-wrapper">
-                    <FaUser className="icon" />
-                    {!isExpanded && <span className="tooltip">Profile</span>}
-                  </div>
-                  {isExpanded && <span>Profile / Settings</span>}
                 </li>
 
                 {/* New Facebook Page Option */}

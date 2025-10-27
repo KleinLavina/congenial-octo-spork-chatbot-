@@ -66,7 +66,7 @@ const CTEChatbot: React.FC = () => {
   return (
     <main className="chat">
       <div className="chat-container">
-        <ChatHeader title="Tatak Josephinian" /> {/* Updated title */}
+        <ChatHeader title="J-Gear Assistant" /> {/* Updated title */}
         <ChatMessages
           messages={messages}
           isTyping={isTyping}
