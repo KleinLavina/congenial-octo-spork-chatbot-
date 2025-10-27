@@ -1,14 +1,23 @@
 import React, { useState, useEffect } from "react";
 import "./css/layout.css";
 import "./css/sidebarleft.css";
-import { FaQuestionCircle, FaUser, FaRedo } from "react-icons/fa";
+import { FaQuestionCircle, FaUser, FaRedo, FaFacebook } from "react-icons/fa";
 import logoSymbol from "../assets/ctebuddylogo.png";
 
 const SidebarLeft: React.FC = () => {
   const [isExpanded, setIsExpanded] = useState(true);
   const [isVisible, setIsVisible] = useState(true);
+
   const handleRefresh = () => {
     window.location.reload();
+  };
+
+  const handleFacebook = () => {
+    // Open Facebook page in new tab
+    window.open(
+      "https://www.facebook.com/profile.php?id=61578204130888",
+      "_blank"
+    );
   };
 
   useEffect(() => {
@@ -18,22 +27,18 @@ const SidebarLeft: React.FC = () => {
       if (width <= 500) {
         // Extra small screens: sidebar hidden, menu icon visible
         setIsVisible(false);
-
         setIsExpanded(false);
       } else if (width <= 600) {
         // Small screens: sidebar hidden, menu icon visible
         setIsVisible(false);
-
         setIsExpanded(false);
       } else if (width <= 1024) {
         // Medium screens: collapsed sidebar, no menu icon
         setIsVisible(true);
-
         setIsExpanded(false);
       } else {
         // Large screens: fully expanded
         setIsVisible(true);
-
         setIsExpanded(true);
       }
     };
@@ -72,7 +77,7 @@ const SidebarLeft: React.FC = () => {
                     className="w-6 h-6 inline-block"
                   />
                 )}
-                {isExpanded ? "CTE Buddy" : "CB"}
+                {isExpanded ? "Merchy Buddy" : "MB"}
               </h2>
               <div className="icon-wrapper">
                 <button
@@ -110,6 +115,23 @@ const SidebarLeft: React.FC = () => {
                     {!isExpanded && <span className="tooltip">Profile</span>}
                   </div>
                   {isExpanded && <span>Profile / Settings</span>}
+                </li>
+
+                {/* New Facebook Page Option */}
+                <li>
+                  <div className="icon-wrapper">
+                    <button onClick={handleFacebook} className="icon-button">
+                      <FaFacebook className="icon" />
+                    </button>
+                    {!isExpanded && (
+                      <span className="tooltip">Our FB Page</span>
+                    )}
+                  </div>
+                  {isExpanded && (
+                    <button onClick={handleFacebook} className="text-button">
+                      Our FB Page
+                    </button>
+                  )}
                 </li>
               </ul>
             </nav>

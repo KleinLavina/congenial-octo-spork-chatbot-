@@ -27,7 +27,7 @@ const ChatInputArea: React.FC<ChatInputAreaProps> = ({
           setInputText(e.target.value)
         }
         onKeyPress={handleKeyPress}
-        placeholder="Ask me about CTE programs, enrollment, schedules, or anything else..."
+        placeholder="Ask me about SJC merchandise, products, pricing, or how to order..."
         rows={2}
       />
       <button onClick={handleSend} disabled={!inputText.trim()}>

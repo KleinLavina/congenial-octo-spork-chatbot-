@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Menu, RefreshCw, User, HelpCircle } from "lucide-react";
+import { Menu, RefreshCw, User, HelpCircle, Facebook } from "lucide-react";
 import logo from "../../assets/f-teacher.png";
 import "../css/chatheader.css";
 
@@ -41,6 +41,15 @@ const ChatHeader: React.FC<{ title: string }> = ({ title }) => {
 
   const handleProfile = () => {
     console.log("Profile clicked");
+    setIsMenuOpen(false);
+  };
+
+  const handleFacebook = () => {
+    // Open Facebook page in new tab
+    window.open(
+      "https://www.facebook.com/profile.php?id=61578204130888",
+      "_blank"
+    );
     setIsMenuOpen(false);
   };
 
@@ -116,6 +125,11 @@ const ChatHeader: React.FC<{ title: string }> = ({ title }) => {
                 <button className="dropdown-item" onClick={handleProfile}>
                   <User size={16} />
                   <span>Profile</span>
+                </button>
+                {/* Facebook Page Option */}
+                <button className="dropdown-item" onClick={handleFacebook}>
+                  <Facebook size={16} />
+                  <span>Our FB Page</span>
                 </button>
               </div>
             )}
