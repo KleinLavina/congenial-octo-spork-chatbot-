@@ -63,20 +63,26 @@ Why Shop With Us?
 ✅ Affordable student-friendly prices
 ✅ Custom orders available for groups`;
 
-export const ABOUT_CREATOR_RESPONSE = `🛍️ About Creator of the Chatbot
+export const ABOUT_CREATOR_RESPONSE = `👨‍💻 About the Chatbot Development Team
 
-Chatbot Development Team
-The names developed by your team, based on the provided text, are:
+We're proud to introduce the BSIT Department students behind this chatbot!
 
-Lead Developer: Klein Lavina
+🎓 Development Team
+BSIT Department | 4th Year | Section T
 
-Team Member: Tristan Mantilla
+👥 Team Members:
+• Klein Lavina - Lead Developer
+• Tristan Mantilla - Backend Specialist  
+• Charlie Otadoy - Frontend Developer
+• John Maiko Siano - System Analyst
 
-Team Member: Charlie Otadoy
+📚 Project Context
+This chatbot was developed as part of our Capstone Project for the Bachelor of Science in Information Technology program. Our goal was to create an intelligent assistant that enhances the customer experience for Tatak Josephinian while showcasing the technical skills we've developed throughout our SJC education.
 
-Team Member: John Maiko Siano
+💡 Technical Excellence
+Powered by modern AI technology and built with cutting-edge development practices learned through our BSIT curriculum at Saint Joseph College.
 
-`;
+🏆 Go Josephinians!`;
 
 export const PRODUCTS_RESPONSE = `🛍️ Available SJC Merchandise
 
@@ -195,7 +201,7 @@ export const CUSTOM_ORDERS_RESPONSE = `🎨 Custom Merchandise Orders
 
 Perfect For:
 👥 Student organizations & clubs
-🎓 Class batches & groups
+🎓 Class batches & groups (like BSIT 4th Year Section T!)
 🎉 Special events & activities
 🤝 Team building gifts
 
@@ -322,3 +328,31 @@ Need Help Choosing?
 
 Custom Sizing:
 👕 Available for custom orders (minimum quantity applies)`;
+
+export const DOWNPAYMENT_RESPONSE = `💰 Downpayment Information
+
+For downpayment inquiries and arrangements, we'd be happy to assist you! 
+
+Here's how we can help:
+• Custom downpayment plans for large orders
+• Reservation holds with partial payment
+• Flexible payment terms for group orders
+• Special arrangements for events and organizations
+
+📱 **Best Way to Inquire:**
+Please message us directly on our Facebook page 'Tatak Josephinian' for personalized downpayment options!
+
+We'll discuss:
+• Required downpayment percentage
+• Payment schedule
+• Reservation period
+• Order confirmation process
+
+💡 **Why Message Us?**
+Downpayment terms vary based on:
+• Order total amount
+• Customization complexity  
+• Production timeline
+• Quantity ordered
+
+We're flexible and here to work with your needs! Message us on Facebook to get started with your downpayment arrangement.`;

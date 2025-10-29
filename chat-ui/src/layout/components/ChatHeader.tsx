@@ -3,7 +3,13 @@ import { Menu, RefreshCw, HelpCircle, Facebook } from "lucide-react";
 import logo from "../../assets/ashbro.png";
 import "../css/chatheader.css";
 
-const ChatHeader: React.FC<{ title: string }> = ({ title }) => {
+// Update props interface to include the handler
+interface ChatHeaderProps {
+  title: string;
+  onFAQsClick?: () => void; // Add this prop
+}
+
+const ChatHeader: React.FC<ChatHeaderProps> = ({ title, onFAQsClick }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showRightSection, setShowRightSection] = useState(false);
 
@@ -12,21 +18,14 @@ const ChatHeader: React.FC<{ title: string }> = ({ title }) => {
       const width = window.innerWidth;
 
       if (width <= 500) {
-        // Show right section (mobile menu) on screens below 500px
         setShowRightSection(true);
       } else {
-        // Hide right section on screens above 500px
         setShowRightSection(false);
       }
     };
 
-    // Initial check
     handleResize();
-
-    // Add event listener
     window.addEventListener("resize", handleResize);
-
-    // Cleanup
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
@@ -36,11 +35,14 @@ const ChatHeader: React.FC<{ title: string }> = ({ title }) => {
 
   const handleFAQs = () => {
     console.log("FAQs clicked");
+    // Call the parent handler if provided
+    if (onFAQsClick) {
+      onFAQsClick();
+    }
     setIsMenuOpen(false);
   };
 
   const handleFacebook = () => {
-    // Open Facebook page in new tab
     window.open(
       "https://www.facebook.com/profile.php?id=61578204130888",
       "_blank"
@@ -52,14 +54,12 @@ const ChatHeader: React.FC<{ title: string }> = ({ title }) => {
     <div className="chat-header">
       {/* Left Section */}
       <div className="left-section">
-        {/* Avatar with Online Status */}
         <div className="avatar-container">
           <div className="chat-avatar">
             <img src={logo} alt="Chat avatar" />
           </div>
         </div>
 
-        {/* Title with Online Status */}
         <div className="title-container">
           <div className="chat-title">{title}</div>
           <div className="online-status">
@@ -109,7 +109,6 @@ const ChatHeader: React.FC<{ title: string }> = ({ title }) => {
                   <RefreshCw size={16} />
                   <span>Refresh Chat</span>
                 </button>
-                {/* Facebook Page Option */}
                 <button className="dropdown-item" onClick={handleFacebook}>
                   <Facebook size={16} />
                   <span>Our FB Page</span>

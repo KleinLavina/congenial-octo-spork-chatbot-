@@ -18,6 +18,7 @@ import {
   DEFAULT_RESPONSE,
   NEW_ARRIVALS_RESPONSE,
   SIZING_RESPONSE,
+  DOWNPAYMENT_RESPONSE,
 } from "./chatListResponse";
 
 // Import both the type and the actual suggestion data
@@ -83,6 +84,21 @@ export function getMerchandiseResponse(userInput: string): ChatResponse {
     .trim();
 
   const keywordGroups: KeywordGroup[] = [
+    {
+      keywords: [
+        "downpayment",
+        "down payment",
+        "deposit",
+        "advance payment",
+        "partial payment",
+        "reservation fee",
+        "installment",
+        "payment plan",
+      ],
+      priority: 10,
+      response: DOWNPAYMENT_RESPONSE,
+      suggestions: generalReplies, // Using general replies only as requested
+    },
     {
       keywords: [
         "gcash",
@@ -168,6 +184,7 @@ export function getMerchandiseResponse(userInput: string): ChatResponse {
         "items",
         "merch",
         "merchandise",
+        "accessories",
         "cap",
         "caps",
         "hat",

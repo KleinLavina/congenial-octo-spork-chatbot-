@@ -4,7 +4,11 @@ import "./css/sidebarleft.css";
 import { FaQuestionCircle, FaRedo, FaFacebook } from "react-icons/fa";
 import logoSymbol from "../assets/haha.png";
 
-const SidebarLeft: React.FC = () => {
+interface SidebarLeftProps {
+  onFAQsClick?: () => void;
+}
+
+const SidebarLeft: React.FC<SidebarLeftProps> = ({ onFAQsClick }) => {
   const [isExpanded, setIsExpanded] = useState(true);
   const [isVisible, setIsVisible] = useState(true);
 
@@ -13,11 +17,17 @@ const SidebarLeft: React.FC = () => {
   };
 
   const handleFacebook = () => {
-    // Open Facebook page in new tab
     window.open(
       "https://www.facebook.com/profile.php?id=61578204130888",
       "_blank"
     );
+  };
+
+  const handleFAQs = () => {
+    console.log("FAQs clicked in Sidebar");
+    if (onFAQsClick) {
+      onFAQsClick();
+    }
   };
 
   useEffect(() => {
@@ -25,19 +35,15 @@ const SidebarLeft: React.FC = () => {
       const width = window.innerWidth;
 
       if (width <= 500) {
-        // Extra small screens: sidebar hidden, menu icon visible
         setIsVisible(false);
         setIsExpanded(false);
       } else if (width <= 600) {
-        // Small screens: sidebar hidden, menu icon visible
         setIsVisible(false);
         setIsExpanded(false);
       } else if (width <= 1024) {
-        // Medium screens: collapsed sidebar, no menu icon
         setIsVisible(true);
         setIsExpanded(false);
       } else {
-        // Large screens: fully expanded
         setIsVisible(true);
         setIsExpanded(true);
       }
@@ -50,15 +56,11 @@ const SidebarLeft: React.FC = () => {
 
   return (
     <>
-      {/* Menu icon for small screens */}
-
-      {/* Sidebar */}
       {isVisible && (
         <aside
           className={`sidebar left ${isExpanded ? "expanded" : "collapsed"}`}
         >
           <div className="sidebar-container">
-            {/* Toggle Button */}
             <button
               className="toggle-btn"
               onClick={() => setIsExpanded(!isExpanded)}
@@ -67,7 +69,6 @@ const SidebarLeft: React.FC = () => {
               {isExpanded && <span> Minimize</span>}
             </button>
 
-            {/* Top Section */}
             <div className="sidebar-top">
               <h2 className="logo">
                 {isExpanded && (
@@ -98,18 +99,22 @@ const SidebarLeft: React.FC = () => {
               </div>
             </div>
 
-            {/* Main Menu */}
             <nav className="sidebar-menu">
               <ul>
                 <li>
                   <div className="icon-wrapper">
-                    <FaQuestionCircle className="icon" />
+                    <button onClick={handleFAQs} className="icon-button">
+                      <FaQuestionCircle className="icon" />
+                    </button>
                     {!isExpanded && <span className="tooltip">FAQs</span>}
                   </div>
-                  {isExpanded && <span>FAQs</span>}
+                  {isExpanded && (
+                    <button onClick={handleFAQs} className="text-button">
+                      FAQs
+                    </button>
+                  )}
                 </li>
 
-                {/* New Facebook Page Option */}
                 <li>
                   <div className="icon-wrapper">
                     <button onClick={handleFacebook} className="icon-button">
@@ -128,7 +133,6 @@ const SidebarLeft: React.FC = () => {
               </ul>
             </nav>
 
-            {/* Footer */}
             {isExpanded && (
               <div className="sidebar-footer">
                 <small>Student Portal • Google Classroom • Email</small>

@@ -3,11 +3,15 @@ import ChatHeader from "./components/ChatHeader";
 import ChatInputArea from "./components/ChatInputArea";
 import ChatMessages from "./components/ChatMessages";
 import type { Message } from "./backend/chatService2";
-import { getMerchandiseResponse } from "./backend/chatService2"; // Updated import
+import { getMerchandiseResponse } from "./backend/chatService2";
 import "./css/chatbot.css";
 import type { SuggestedReply } from "./backend/suggestedReplies";
 
-const CTEChatbot: React.FC = () => {
+interface CTEChatbotProps {
+  onFAQsClick?: () => void;
+}
+
+const CTEChatbot: React.FC<CTEChatbotProps> = ({ onFAQsClick }) => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
@@ -42,10 +46,10 @@ const CTEChatbot: React.FC = () => {
     setMessages((prev) => [...prev, userMessage]);
     setInputText("");
     setIsTyping(true);
-    setCurrentSuggestions([]); // Clear suggestions when bot starts typing
+    setCurrentSuggestions([]);
 
     setTimeout(() => {
-      const response = getMerchandiseResponse(inputText); // Updated function call
+      const response = getMerchandiseResponse(inputText);
       const botMessage: Message = {
         id: messages.length + 2,
         text: response.message,
@@ -66,12 +70,12 @@ const CTEChatbot: React.FC = () => {
   return (
     <main className="chat">
       <div className="chat-container">
-        <ChatHeader title="J-Gear Assistant" /> {/* Updated title */}
+        <ChatHeader title="J-Gear Assistant" onFAQsClick={onFAQsClick} />
         <ChatMessages
           messages={messages}
           isTyping={isTyping}
           messagesEndRef={messagesEndRef}
-          suggestedReplies={isTyping ? [] : currentSuggestions} // Hide suggestions when typing
+          suggestedReplies={isTyping ? [] : currentSuggestions}
           onSuggestionClick={handleSuggestionClick}
         />
         <ChatInputArea
