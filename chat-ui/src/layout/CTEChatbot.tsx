@@ -7,11 +7,16 @@ import { getMerchandiseResponse } from "./backend/chatService2";
 import "./css/chatbot.css";
 import type { SuggestedReply } from "./backend/suggestedReplies";
 
+// In CTEChatbot.tsx - update the interface and component
 interface CTEChatbotProps {
   onFAQsClick?: () => void;
+  selectedQuestion?: string; // Add this
 }
 
-const CTEChatbot: React.FC<CTEChatbotProps> = ({ onFAQsClick }) => {
+const CTEChatbot: React.FC<CTEChatbotProps> = ({
+  onFAQsClick,
+  selectedQuestion,
+}) => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
@@ -33,6 +38,15 @@ const CTEChatbot: React.FC<CTEChatbotProps> = ({ onFAQsClick }) => {
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
+
+  // Handle when a question is selected from FAQs - COPY TO INPUT AREA
+  useEffect(() => {
+    if (selectedQuestion && selectedQuestion.trim()) {
+      setInputText(selectedQuestion);
+      // Auto-focus on the input area after setting the text
+      // You might want to add a ref to the textarea for this
+    }
+  }, [selectedQuestion]);
 
   const handleSend = () => {
     if (!inputText.trim()) return;

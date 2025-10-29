@@ -356,3 +356,236 @@ Downpayment terms vary based on:
 • Quantity ordered
 
 We're flexible and here to work with your needs! Message us on Facebook to get started with your downpayment arrangement.`;
+
+// Add these to your responseTemplates.ts
+
+// For "I need help" questions
+export const NEED_HELP_RESPONSE = `🆘 I'm here to help you!
+
+Don't worry, I'll guide you through whatever you need assistance with. 
+
+What type of help do you need?
+• 🛍️ **Product Help** - Questions about items, sizes, colors
+• 💰 **Pricing Help** - Understanding costs and payments  
+• 🛒 **Ordering Help** - How to place an order
+• 📦 **Delivery Help** - Pickup and delivery questions
+• 🎨 **Custom Order Help** - Personalized merchandise
+• 💳 **Payment Help** - GCash instructions
+• 📞 **Contact Help** - How to reach our team
+
+Just tell me what you're having trouble with, and I'll get you the answers!
+
+💬 *If you need more detailed assistance, feel free to message us directly on our Facebook page!*`;
+
+// For "Customer service" questions
+export const CUSTOMER_SERVICE_RESPONSE = `👥 Customer Service Information
+
+**Tatak Josephinian Customer Support:**
+
+🕒 **Response Times:**
+• Facebook Messages: Usually within hours
+• Phone Calls: During business hours
+• In-person: ABM Faculty, SJC 2nd Floor
+
+**How to Get Customer Service:**
+1. 📱 **Facebook Message** - Fastest response
+2. 📞 **Phone Call** - 0975-902-1901
+3. 🏫 **Visit Us** - ABM Faculty, SJC 2nd Floor
+
+**We Can Help With:**
+• Order status inquiries
+• Product information
+• Payment issues
+• Custom order consultations
+• Size exchanges
+• General questions
+
+**Pro Tip:** For fastest service, message us on Facebook with your specific concern!
+
+📱 *Message us on Facebook for immediate assistance with any customer service needs!*`;
+
+// For "Problem with order" questions
+export const ORDER_PROBLEM_RESPONSE = `🚨 Order Problem Assistance
+
+I'm sorry you're experiencing an issue with your order! Let's get this resolved.
+
+**Common Order Issues & Solutions:**
+
+📦 **Haven't Received Order?**
+• Check your Facebook messages for pickup/delivery details
+• Confirm you've completed payment
+• Message us with your order details
+
+💳 **Payment Issue?**
+• Verify GCash transaction was successful
+• Send us screenshot of payment receipt
+• We'll confirm payment receipt
+
+📞 **Need to Modify Order?**
+• Contact us immediately via Facebook
+• We can help with size changes or item swaps
+• Modifications depend on order status
+
+🔄 **Wrong Item Received?**
+• Message us with photos of received items
+• We'll arrange for exchange or correction
+
+**Immediate Assistance:**
+📱 Message us on Facebook with:
+• Your name
+• Order details  
+• Specific problem
+• Payment receipt (if applicable)
+
+We'll work quickly to resolve any issues!
+
+💬 *For urgent order concerns, please message our Facebook page directly for fastest resolution!*`;
+
+// For "Payment issue" questions
+export const PAYMENT_ISSUE_RESPONSE = `💳 Payment Issue Assistance
+
+Having trouble with payment? Let me help you resolve it!
+
+**Common Payment Issues:**
+
+❌ **Payment Not Going Through?**
+• Double-check GCash number: 0975-902-1901
+• Verify account name: "Tatak Josephinian"
+• Ensure sufficient GCash balance
+• Check internet connection
+
+📱 **Sent Payment But No Confirmation?**
+• Send us screenshot of transaction receipt
+• Include your name and order details
+• We'll verify on our end immediately
+
+🔢 **Wrong Amount Sent?**
+• Contact us immediately via Facebook
+• We can arrange refund or balance payment
+• Don't worry - we'll fix it!
+
+⏰ **Payment Expired?**
+• GCash payments may expire if not confirmed
+• Message us to check payment status
+• We can extend reservation if needed
+
+**Immediate Help:**
+📞 Call us: 0975-902-1901
+💬 Facebook Message: Fastest resolution
+
+We'll get your payment sorted out quickly!
+
+📱 *If you're still experiencing payment issues, message us on Facebook and we'll help you right away!*`;
+
+// For "Can't decide what to ask" questions
+export const CANT_DECIDE_RESPONSE = `🤔 No worries! Let me help you discover what to ask.
+
+Based on what most customers want to know, here are some great starting points:
+
+**Popular Starting Questions:**
+🛍️ "What products do you have available?"
+💰 "How much are your caps/tote bags/shirts?"
+📦 "Do you have [item] in stock right now?"
+🎨 "Can I customize merchandise for my group?"
+🛒 "How do I place an order?"
+💳 "What's your GCash payment process?"
+📞 "How can I contact your store?"
+
+**Or Tell Me Your Interest:**
+• Are you shopping for yourself or a group?
+• Interested in specific items like caps, bags, or shirts?
+• Need information for a class or organization?
+• Just browsing to see what's available?
+
+**You Could Also Ask:**
+• "What's your most popular item?"
+• "Do you have any new arrivals?"
+• "What sizes do your t-shirts come in?"
+• "How long do custom orders take?"
+
+Don't overthink it - just ask whatever comes to mind! I'm here to help 😊
+
+💬 *Remember, you can always message our Facebook page if you have specific questions that need personal attention!*`;
+
+// For "What should I ask?" questions
+export const WHAT_TO_ASK_RESPONSE = `💡 Great question! Here are some excellent questions to get started:
+
+**Top Questions Customers Ask:**
+
+🛍️ **Product Questions:**
+• "What SJC merchandise do you sell?"
+• "Show me your cap designs"
+• "What colors are available for tote bags?"
+• "Do you have umbrella products?"
+
+💰 **Pricing Questions:**
+• "How much is your basic cap?"
+• "What's the price of large tote bags?"
+• "Do you offer student discounts?"
+• "How much for custom t-shirts?"
+
+🛒 **Ordering Questions:**
+• "How do I place an order?"
+• "What's your ordering process?"
+• "Can I order through Facebook?"
+• "Do you deliver around Maasin?"
+
+🎨 **Custom Order Questions:**
+• "Can I customize merchandise for my class?"
+• "What's the process for group orders?"
+• "How long do custom orders take?"
+• "What's the minimum quantity for custom items?"
+
+📞 **Contact Questions:**
+• "What's your Facebook page?"
+• "Where is your store located?"
+• "What's your phone number?"
+• "When are you open?"
+
+Pick any that interest you, or ask your own question!
+
+📱 *For more specific inquiries or if you need to discuss details, feel free to message us directly on Facebook!*`;
+
+// For "I have a question" questions
+export const HAVE_QUESTION_RESPONSE = `❓ I'm all ears! Ask me anything about Tatak Josephinian or SJC merchandise.
+
+I can help you with questions about:
+
+**Products & Merchandise:**
+• What items we carry
+• Available sizes and colors
+• New arrivals and featured products
+• Product photos and details
+
+**Pricing & Payment:**
+• Item prices and costs
+• GCash payment process
+• Downpayment options
+• Group order discounts
+
+**Ordering & Process:**
+• How to place orders
+• Pickup and delivery options
+• Order timeline and processing
+• Reservation system
+
+**Custom Orders:**
+• Personalized merchandise
+• Group and batch orders
+• Design and customization
+• Production timeframes
+
+**Store & Contact:**
+• Location and hours
+• Contact information
+• Facebook page details
+• Response times
+
+**SJC Information:**
+• College history and background
+• Tatak Josephinian store info
+• BSBA Department operations
+
+Go ahead - ask your question! I'm ready to help 🎯
+
+💬 *If your question requires more detailed discussion, don't hesitate to message our Facebook page for personalized assistance!*`;

@@ -19,6 +19,13 @@ import {
   NEW_ARRIVALS_RESPONSE,
   SIZING_RESPONSE,
   DOWNPAYMENT_RESPONSE,
+  NEED_HELP_RESPONSE,
+  CUSTOMER_SERVICE_RESPONSE,
+  ORDER_PROBLEM_RESPONSE,
+  PAYMENT_ISSUE_RESPONSE,
+  CANT_DECIDE_RESPONSE,
+  WHAT_TO_ASK_RESPONSE,
+  HAVE_QUESTION_RESPONSE,
 } from "./chatListResponse";
 
 // Import both the type and the actual suggestion data
@@ -344,6 +351,120 @@ export function getMerchandiseResponse(userInput: string): ChatResponse {
       priority: 3,
       response: THANKS_RESPONSE,
       suggestions: thanksReplies,
+    },
+
+    // Add these keyword groups to your existing keywordGroups array in chatService.ts
+
+    {
+      keywords: [
+        "help",
+        "i need help",
+        "need help",
+        "assistance",
+        "support",
+        "emergency",
+        "urgent",
+        "problem",
+        "trouble",
+        "stuck",
+      ],
+      priority: 8,
+      response: NEED_HELP_RESPONSE,
+      suggestions: generalReplies, // Using general replies only
+    },
+    {
+      keywords: [
+        "customer service",
+        "customer support",
+        "service",
+        "support team",
+        "help desk",
+        "service desk",
+        "customer care",
+      ],
+      priority: 8,
+      response: CUSTOMER_SERVICE_RESPONSE,
+      suggestions: generalReplies, // Using general replies only
+    },
+    {
+      keywords: [
+        "problem with order",
+        "order problem",
+        "order issue",
+        "wrong order",
+        "missing order",
+        "order mistake",
+        "order error",
+        "didn't receive",
+        "haven't received",
+        "order not received",
+      ],
+      priority: 9,
+      response: ORDER_PROBLEM_RESPONSE,
+      suggestions: generalReplies, // Using general replies only
+    },
+    {
+      keywords: [
+        "payment issue",
+        "payment problem",
+        "payment error",
+        "payment failed",
+        "payment not working",
+        "can't pay",
+        "payment trouble",
+        "transaction issue",
+        "gcash problem",
+        "gcash error",
+      ],
+      priority: 9,
+      response: PAYMENT_ISSUE_RESPONSE,
+      suggestions: generalReplies, // Using general replies only
+    },
+    {
+      keywords: [
+        "can't decide",
+        "don't know what to ask",
+        "what to ask",
+        "what should i ask",
+        "what can i ask",
+        "not sure what to ask",
+        "confused what to ask",
+        "what questions",
+        "suggest questions",
+      ],
+      priority: 5,
+      response: CANT_DECIDE_RESPONSE,
+      suggestions: generalReplies, // Using general replies only
+    },
+    {
+      keywords: [
+        "what should i ask",
+        "what to ask",
+        "suggest questions",
+        "recommend questions",
+        "good questions",
+        "popular questions",
+        "common questions",
+        "frequently asked",
+      ],
+      priority: 5,
+      response: WHAT_TO_ASK_RESPONSE,
+      suggestions: generalReplies, // Using general replies only
+    },
+    {
+      keywords: [
+        "i have a question",
+        "i have questions",
+        "got a question",
+        "want to ask",
+        "need to ask",
+        "have inquiry",
+        "have query",
+        "want to know",
+      ],
+      priority: 6,
+      response: HAVE_QUESTION_RESPONSE,
+      suggestions: generalReplies, // Using general replies only
     },
     {
       keywords: [
